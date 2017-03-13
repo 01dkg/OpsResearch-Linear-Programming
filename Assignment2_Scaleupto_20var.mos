@@ -1,0 +1,72 @@
+model Conference_Management
+uses "mmxprs"; !gain access to the Xpress-Optimizer solver
+	declarations
+		HI = 1..20                       	! Index range
+		PRICE: array(HI) of integer         ! Price table
+		RATING: array(HI) of real			!Customer Satsifcation rating
+		AVAIL: array(HI) of integer			!Available Rooms in a hotel
+		decVar: array(HI) of mpvar          !Decision Variables
+	end-declarations
+	Max_Guest := 150
+	
+	!Read in the data from our text file
+	initializations from 'Conference_Management1.txt'
+		PRICE
+		RATING
+		AVAIL
+	end-initializations
+	
+	!procedure to check problem status
+	procedure print_status
+		declarations
+			status: string
+		end-declarations
+		case getprobstat of
+		XPRS_OPT: status:="LP Optimum found"
+		XPRS_UNF: status:="Unfinished"
+		XPRS_INF: status:="Infeasible"
+		XPRS_UNB: status:="Unbounded"
+		XPRS_OTH: status:="Failed"
+		else status:="???"
+		end-case
+		writeln("Problem status: ", status)
+	end-procedure
+	 
+	!Minimiz cost
+	Cost:= sum(i in HI) PRICE(i)*decVar(i)
+	 
+	!Constraints
+	!Declare that our decision variables are integers
+	forall (i in HI) do 
+		decVar(i) is_integer
+	end-do
+	
+	AvgRating:= (sum(i in HI) RATING(i)*decVar(i))/150 >= 8.3
+			 
+	forall( i in HI)
+		decVar(i) <= AVAIL(i)	 	
+	sum(i in HI) decVar(i)	= Max_Guest
+	
+	
+	!Display output of solution values
+	procedure print_sol	
+		writeln("Begin running model") 	
+		writeln("---------------------------------------------------------")
+		print_status
+		writeln("Cost is: €",getobjval)
+		writeln("---------------------------------------------------------")
+		forall(i in HI) 
+			writeln("Passenger in Hotel_",i," -> ", getsol(decVar(i)))
+			
+		!write value of AvgRating to output
+		writeln(getsol(AvgRating))
+		writeln("---------------------------------------------------------")
+		exportprob(EP_MIN,"",Cost)
+		writeln("---------------------------------------------------------")
+		exportprob(1,"Conference_Management",Cost)
+		writeln("End running model")
+		!Modify Optimizer control parameter PSEUDOCOST
+	end-procedure 
+	minimize(Cost)
+	print_sol	
+end-model

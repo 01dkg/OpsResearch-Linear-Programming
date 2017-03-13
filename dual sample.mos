@@ -1,0 +1,74 @@
+(!******************************************************
+*   Pottery Problem and its dual                       *
+*   simple model to demonstrate Mosel and Xpress-IVE   *
+*                                                      *
+*     author: P. Carroll			                   *
+*******************************************************!)	
+
+model pottery_dual
+uses "mmxprs"; !gain access to the Xpress-Optimizer solver
+!declarations section
+declarations
+	x1, x2 :mpvar
+	d1, d2: real
+end-declarations
+
+procedure print_status
+	! This is a procedure to check the status of and LP model
+	declarations
+		status: string
+	end-declarations
+	case getprobstat of
+		XPRS_OPT: status:="Optimum found"
+		XPRS_UNF: status:="Unfinished"
+		XPRS_INF: status:="Infeasible"
+		XPRS_UNB: status:="Unbounded"
+		XPRS_OTH: status:="Failed"
+		else status:="???"
+	end-case
+	writeln("Problem status: ", status)
+end-procedure
+
+!Here's the primal problem model
+Profit:= 40*x1 + 50*x2 
+labour:= 1*x1 + 2*x2 <= 40	!labour
+clay:= 4*x1 + 3*x2 <= 120	!clay
+
+maximise(Profit)
+writeln("Primal LP Example - Pottery; LP Solution:")
+writeln("Objective Value is: €",getobjval)
+writeln("Optimal Solution Mix;")
+writeln("Make ", getsol(x1), " plates")
+writeln("Make ", getsol(x2), " bowls")
+d1:= getrange(XPRS_UPACT, clay)
+writeln("Upper clay feasible limit is ", d1)
+d2:= getrange(XPRS_LOACT,clay)
+writeln("Lower clay feasible limit is ", d2)
+writeln("Shadow Price (dual) of clay resource is :",getdual(clay))
+writeln("---------------------------------")
+writeln(" ")
+z:=getsol(Profit)
+!*********************************************
+
+declarations
+	y1,y2 : mpvar !decision variables for the dual - one ofr each constraint in the primal
+end-declarations
+
+!Here's the dual problem model
+cost:= 40*y1 + 120 * y2
+plates:= 1*y1 + 4*y2 >=40
+bowls:= 2*y1 + 3*y2 >= 50 
+
+minimise(cost)
+writeln("Dual LP Example - Pottery; LP Solution:")
+writeln("Objective Value is: €",getobjval)
+writeln("Dual Values are")
+writeln("Value of time resources is ", getsol(y1))
+writeln("Value of Clay resource is ", getsol(y2))
+writeln("---------------------------------")
+writeln(" ")
+w:=getsol(cost)
+
+!Before you uncomment the next line, what do you think the difference is?
+!writeln("Here's something interesting: the difference between the primal and dual objectives is: ",z-w)
+end-model
