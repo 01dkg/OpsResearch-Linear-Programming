@@ -1,7 +1,0 @@
-\select@language {english}
-\contentsline {section}{List of Figures}{ii}
-\contentsline {section}{List of Tables}{iii}
-\contentsline {section}{Abstract}{iv}
-\contentsline {section}{\numberline {1}Introduction}{1}
-\contentsline {section}{\numberline {A}\\Title of Appendix A}{1}
-\contentsline {section}{References}{1}

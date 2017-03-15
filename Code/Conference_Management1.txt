@@ -1,4 +1,4 @@
-! Data file for `20. Conference Management Assignment 2'
+! Data file for `20. Conference Management Assignment - 2'
 
 PRICE: [ 89, 99, 119, 112,143,94,130,98,155,152,55,68,99,140,87,75,78,110,96,74] !Constraint coefficients	 	
 

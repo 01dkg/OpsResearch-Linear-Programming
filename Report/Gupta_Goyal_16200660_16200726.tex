@@ -1,0 +1,621 @@
+\documentclass[paper=a4, fontsize=11pt]{scrartcl} % A4 paper and 10pt font size
+\usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
+%\usepackage{fourier} % Use the Adobe Utopia font for the document - comment this line to return to the LaTeX default
+\usepackage[english]{babel} % English language/hyphenation
+\usepackage{lscape}
+\usepackage{mathptmx}
+\usepackage{url}
+\usepackage{sectsty} % Allows customizing section commands
+\setlength{\columnsep}{5mm}
+\usepackage{natbib}
+\usepackage{setspace}
+\usepackage{lipsum}
+\usepackage{amsmath}
+\usepackage{relsize}
+\usepackage[most]{tcolorbox}
+\usepackage{inconsolata}
+ \usepackage{booktabs}
+\newtcblisting[auto counter]{sexylisting}[2][]{sharp corners, 
+    fonttitle=\bfseries, colframe=gray, listing only, 
+    listing options={basicstyle=\ttfamily,language=R}, 
+    title=Listing \thetcbcounter: #2, #1}
+\title{MIS40520 Analytics Business Modelling - Assignment 1}
+
+\DeclareOldFontCommand{\rm}{\normalfont\rmfamily}{\mathrm}
+\DeclareOldFontCommand{\sf}{\normalfont\sffamily}{\mathsf}
+\DeclareOldFontCommand{\tt}{\normalfont\ttfamily}{\mathtt}
+\DeclareOldFontCommand{\bf}{\normalfont\bfseries}{\mathbf}
+\DeclareOldFontCommand{\it}{\normalfont\itshape}{\mathit}
+\DeclareOldFontCommand{\sl}{\normalfont\slshape}{\@nomath\sl}
+\DeclareOldFontCommand{\sc}{\normalfont\scshape}{\@nomath\sc}
+\DeclareRobustCommand*\cal{\@fontswitch\relax\mathcal}
+\DeclareRobustCommand*\mit{\@fontswitch\relax\mathnormal}
+%----------------------------------------------------------------------------------------
+%	Work Break Down Sturture of Analytics type model
+%----------------------------------------------------------------------------------------
+\usepackage{tikz}
+\usetikzlibrary{arrows,shapes,positioning,shadows,trees}
+\tikzset{
+every node/.style={draw,text width=2cm,drop shadow},
+style1/.style= {rectangle, rounded corners=2pt, thin,align=center,fill=green!30},
+style2/.style= {rectangle, rounded corners=6pt, thin,align=center,fill=yellow!40},
+style3/.style= {rectangle,thin,align=left,fill=pink!60,text width=2.7cm, text height=1.6mm, font=\small}
+}
+%----------------------------------------------------------------------------------------
+%	Caption Set & URL Font Control
+%----------------------------------------------------------------------------------------
+\usepackage[font=footnotesize,labelfont=bf]{caption}
+\captionsetup{justification=centering}
+\urlstyle{rm}
+\usepackage{authblk}
+
+\usepackage{geometry}
+ \geometry{
+ a4paper,
+ total={170mm,257mm},
+ left=20mm,
+ top=20mm,
+ footskip=10mm
+ }
+
+\usepackage{graphicx}
+\graphicspath{ {images/} }
+\usepackage{indentfirst}
+\usepackage{dirtree}
+\setlength\parindent{0pt} % Removes all indentation from paragraphs - comment this line for an assignment with lots of text
+
+%----------------------------------------------------------------------------------------
+%	Header Footer
+%----------------------------------------------------------------------------------------
+\usepackage{fancyvrb}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lhead{MIS40520: Analytical Business Modelling}
+\rhead{Shruti Goyal \\ Deepak Kumar Gupta}
+\cfoot{\thepage}
+
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION
+%----------------------------------------------------------------------------------------
+\begin{document}
+\begin{titlepage}
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}} % Defines a new command for the horizontal lines, change thickness here
+\center % Center everything on the page
+
+%----------------------------------------------------------------------------------------
+%	HEADING SECTIONS
+%----------------------------------------------------------------------------------------
+\textsc{\LARGE UCD Michael Smurfit Graduate Business School}\\[1.7cm] % Name of your university/college
+\includegraphics[scale = 0.7]{logo.png} \\ [1cm]
+\textrm{\Large	\textrm{MIS40520: Analytical Business Modelling}}\\[0.6cm] % Major heading such as course name
+
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION
+%----------------------------------------------------------------------------------------
+
+\HRule \\[0.5cm]
+{ \LARGE  \textrm{M(I)LP Assignment 2}}\\[0.5cm] % Title of your document
+\HRule \\[1.5cm]
+ 
+%----------------------------------------------------------------------------------------
+%	AUTHOR SECTION
+%----------------------------------------------------------------------------------------
+
+\begin{minipage}{0.45\textwidth}
+\begin{flushleft} \large
+\emph{\textrm{Authors:}}\\
+\normalsize{Goyal \textrm{Shruti} (16200726)}\\
+\normalsize{Gupta \textrm{Deepak Kumar} (16200660) }\\
+\end{flushleft}
+\end{minipage}
+~
+~
+\begin{minipage}{0.45\textwidth}
+\begin{flushright} \large
+\emph{\textrm{Lecturer:}} \\
+\normalsize{Dr Paula \textrm{Carroll}} % Supervisor's Name
+\end{flushright}
+\end{minipage}\\[3cm]
+% If you don't want a supervisor, uncomment the two lines below and remove the section above
+%\Large \emph{Author:}\\
+%John \textsc{Smith}\\[3cm] % Your name
+
+%----------------------------------------------------------------------------------------
+%	DATE SECTION
+%----------------------------------------------------------------------------------------
+\vspace{3cm}
+{\large \today}\\[1cm] % Date, change the \today to a set date if you want to be precise
+\vfill % Fill the rest of the page with whitespace
+\end{titlepage}
+
+%% Begin Writing the Document
+
+%----------------------------------------------------------------------------------------
+%	MAIN BODY
+%----------------------------------------------------------------------------------------
+%\setlength{\parindent}{10ex}
+%Context
+
+\pagenumbering{roman}
+\tableofcontents
+\listoffigures
+\listoftables
+\addcontentsline{toc}{section}{Executive Summary}
+\cleardoublepage
+\clearpage
+
+%----------------------------------------------------------------------------------------
+%	EXECUTIVE SUMMARY
+%----------------------------------------------------------------------------------------
+\subtitle{\normalsize{Literature Review: Big data Analytics for Healthcare}}
+\title{Executive Summary}
+\author{\small{Shruti Goyal, Deepak Kumar Gupta and Dr James McDermott}}
+\date{}
+\maketitle
+\textbf{Objective:} To review big data analytics in healthcare.
+\\
+\\
+\textbf{Methods:} The review describes big data analytics and its implementation in healthcare, highlights gaps in previous studies describes analytical platforms and examples, discusses the existing challenges, offers a conclusion and, states an open question for future work.
+\\
+\\
+\textbf{Results:} The review provides the overview of advancements and changes in big data analytics for 
+practitioners.
+\\
+\\
+\textbf{Conclusion:} Big data analytics implementation in healthcare has seen a tremendous growth over past 6 years. However, there are few challenges which still need to be addressed.
+\\ 
+\\
+\textbf{Keywords:} Healthcare, Data Analytics, Clinics, Systematic Review, Tools and Techniques
+\clearpage	
+%----------------------------------------------------------------------------------------
+%	ABSTRACT SECTION
+%----------------------------------------------------------------------------------------
+\begin{abstract}
+\title{Abstract}
+Yayayayay
+\end{abstract}
+\newpage 
+\pagenumbering{arabic}
+
+%----------------------------------------------------------------------------------------
+%	BACKGROUND
+%----------------------------------------------------------------------------------------
+\section{Background}
+You have been asked to help organise hotel accommodation for 150 delegates
+attending a conference in UCD. You use a hotel booking website to extract the data
+shown in the Table below for ten four star hotels in Dublin city centre. The Table
+shows the price for a single room per person per night, the customer satisfaction
+rating and the number of rooms available for each hotel. The conference organisers
+want to allocate the delegates to hotels at minimum cost while achieving an average
+customer satisfaction rate of at least 8.3. Formulate an (I)LP model of this problem. 
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{@{}|l|l|l|l|l|l|l|l|l|l|l|@{}}
+\toprule
+Hotel Index       & 1   & 2   & 3   & 4   & 5   & 6   & 7   & 8   & 9   & 10  \\ \midrule
+Price (euro)     & 89  & 99  & 119 & 112 & 143 & 94  & 130 & 98  & 155 & 152 \\ \midrule
+Customer rating   & 7.8 & 8.3 & 8   & 8.7 & 8   & 8.1 & 8.6 & 8.9 & 8.9 & 8.4 \\ \midrule
+Room Availability & 35  & 30  & 15  & 15  & 15  & 20  & 15  & 10  & 10  & 20  \\ \bottomrule
+\end{tabular}
+\caption{Hotel Data}
+\label{hoteldata}
+\end{table}
+%----------------------------------------------------------------------------------------
+%	METHODOLOGY
+%----------------------------------------------------------------------------------------
+
+
+%----------------------------------------------------------------------------------------
+%	INTRODUCTION
+%----------------------------------------------------------------------------------------
+
+\section{Introduction}
+
+Discussion about research papers
+\\
+\begin{figure}[ht]
+\centering
+	\includegraphics[scale = 0.7]{logo.png} 
+	\caption{Four V's of Big Data}
+	\caption*{Source: \url{http://www.datasciencecentral.com/profiles/blogs/data-veracity}}	
+\end{figure}
+
+then discuss about integer programming take some example from internet to demostrate
+\section{Methodology}
+
+We have total delegates 150 and 10 four star hotels to accommodate guests
+We need to minimize the cost while achieving minimum average rating:
+\\
+Lets say $HI$ as $Hotel$ $Index$:
+\\
+
+Objective is: 
+\begin{equation}
+minimize{(Cost)}
+\end{equation}
+Constraint 1: 
+\begin{equation}
+‎‎Cost‎ ‎=‎ \mathlarger{\mathlarger{‎‎\sum}}_{HI=1}^{10}{Price(HI)* decVar(HI}
+\end{equation}
+
+Constraint 2: 
+\begin{equation}
+Avg. Rating ‎=‎ \frac{\mathlarger{\mathlarger{‎‎\sum}}_{HI=1}^{10}{Rating(HI)*decVar(HI))}}{150}
+\end{equation}
+
+Constraint 3: 
+\begin{equation}
+decVar(HI) <= Avail(HI), HI \in \{1,10\}
+\end{equation}
+
+
+
+%----------------------------------------------------------------------------------------
+%	RESULTS AND ANALYSIS
+%----------------------------------------------------------------------------------------
+
+\section{Analysis of Results}
+
+Compare non integer and integer solutions
+
+Why interger programming is required
+
+Also take previous assignment example to contrast the need on MILP
+
+%----------------------------------------------------------------------------------------
+%	CONCLUSIONS
+%----------------------------------------------------------------------------------------
+
+\section{Conclusions}
+
+\appendix
+\section{Code}
+\begin{sexylisting}{Craft Brewer: LP Model}
+model Conference_Management
+uses "mmxprs"; !gain access to the Xpress-Optimizer solver
+	declarations
+		HI = 1..10                       	! Index range
+		PRICE: array(HI) of integer         ! Price table
+		RATING: array(HI) of real			!Customer Satsifcation rating
+		AVAIL: array(HI) of integer			!Available Rooms in a hotel
+		decVar: array(HI) of mpvar          !Decision Variables
+	end-declarations
+	Max_Guest := 150
+	
+	!Read in the data from our text file
+	initializations from 'Conference_Management.txt'
+		PRICE
+		RATING
+		AVAIL
+	end-initializations
+	
+	!procedure to check problem status
+	procedure print_status
+		declarations
+			status: string
+		end-declarations
+		case getprobstat of
+		XPRS_OPT: status:="LP Optimum found"
+		XPRS_UNF: status:="Unfinished"
+		XPRS_INF: status:="Infeasible"
+		XPRS_UNB: status:="Unbounded"
+		XPRS_OTH: status:="Failed"
+		else status:="???"
+		end-case
+		writeln("Problem status: ", status)
+	end-procedure
+	 
+	!Minimiz cost
+	Cost:= sum(i in HI) PRICE(i)*decVar(i)
+	 
+	!Constraints
+	!Declare that our decision variables are integers
+	forall (i in HI) do 
+		decVar(i) is_integer
+	end-do
+	
+	AvgRating:= (sum(i in HI) RATING(i)*decVar(i))/150 >= 8.3
+			 
+	forall( i in HI)
+		decVar(i) <= AVAIL(i)	 	
+	sum(i in HI) decVar(i)	= Max_Guest
+		
+	!Display output of solution values
+	procedure print_sol	
+		writeln("Begin running model") 	
+		writeln("---------------------------------------------------------")
+		print_status
+		writeln("Cost is: €",getobjval)
+		writeln("---------------------------------------------------------")
+		forall(i in HI) 
+			writeln("Passenger in Hotel_",i," -> ", getsol(decVar(i)))
+			
+		!write value of AvgRating to output
+		writeln(getsol(AvgRating))
+		writeln("---------------------------------------------------------")
+		exportprob(EP_MIN,"",Cost)
+		writeln("---------------------------------------------------------")
+		exportprob(1,"Conference_Management",Cost)
+		writeln("End running model")
+		!Modify Optimizer control parameter PSEUDOCOST
+	end-procedure 
+	minimize(Cost)
+	print_sol	
+end-model
+\end{sexylisting}
+\section{Input and Output}
+\subsection{Case 1: Original Data (10 Variables)}
+\textbf{Input}
+\begin{verbatim}
+! Data file for `20. Conference Management Assignment - 2'
+
+PRICE: [ 89, 99, 119, 112,143,94,130,98,155,152] !Constraint coefficients	 	
+
+RATING: [7.8,8.3,8.0,8.7,8.0,8.1,8.6,8.9,8.9,8.4] !Constraint coefficients
+
+AVAIL:[35,30,15,15,15,20,15,10,10,20] !Values of the constraints
+\end{verbatim}
+\textbf{Output}
+\begin{verbatim}
+Begin running model
+---------------------------------------------------------
+Problem status: LP Optimum found
+Cost is: €16207
+---------------------------------------------------------
+Passenger in Hotel_1 -> 35
+Passenger in Hotel_2 -> 30
+Passenger in Hotel_3 -> 6
+Passenger in Hotel_4 -> 15
+Passenger in Hotel_5 -> 0
+Passenger in Hotel_6 -> 20
+Passenger in Hotel_7 -> 15
+Passenger in Hotel_8 -> 10
+Passenger in Hotel_9 -> 10
+Passenger in Hotel_10 -> 9
+0.000666667
+---------------------------------------------------------
+\ Using Xpress-MP extensions
+Minimize
+ 89 decVar(1) + 99 decVar(2) + 119 decVar(3) + 112 decVar(4) + 143 decVar(5) + 
+94 decVar(6) + 130 decVar(7) + 98 decVar(8) + 155 decVar(9) + 152 decVar(10)
+
+Subject To
+_R1: decVar(1) + decVar(2) + decVar(3) + decVar(4) + decVar(5) + decVar(6) + 
+decVar(7) + decVar(8) + decVar(9) + decVar(10) = 150
+AvgRating: 0.052 decVar(1) + 0.0553333 decVar(2) + 0.0533333 decVar(3) + 0.058 decVar(4) + 
+0.0533333 decVar(5) + 0.054 decVar(6) + 0.0573333 decVar(7) + 0.0593333 decVar(8) + 
+0.0593333 decVar(9) + 0.056 decVar(10) >= 8.3
+
+Bounds
+decVar(1) <= 35
+decVar(2) <= 30
+decVar(3) <= 15
+decVar(4) <= 15
+decVar(5) <= 15
+decVar(6) <= 20
+decVar(7) <= 15
+decVar(8) <= 10
+decVar(9) <= 10
+decVar(10) <= 20
+
+Integers
+decVar(1) decVar(2) decVar(3) decVar(4) decVar(5) decVar(6) decVar(7) decVar(8) 
+decVar(9) decVar(10) 
+
+End
+---------------------------------------------------------
+End running model
+\end{verbatim}
+
+\subsection{Case 2: Scale Up to 20 Variables}
+\textbf{Input}
+\begin{verbatim}
+! Data file for `20. Conference Management Assignment - 2'
+
+PRICE: [ 89, 99, 119, 112,143,94,130,98,155,152,55,68,99,140,87,75,78,110,96,74] !Constraint coefficients	 	
+
+RATING: [7.8,8.3,8.0,8.7,8.0,8.1,8.6,8.9,8.9,8.4,9.5,7.6,9.5,7.9,8.3,8.2,9.9,8.8,8.0,8.9] !Constraint coefficients
+
+AVAIL:[35,30,15,15,15,20,15,10,10,20,2,5,6,7,9,1,2,5,4,6] !Values of the constraints
+\end{verbatim}
+\textbf{Output}
+\begin{verbatim}
+Begin running model
+---------------------------------------------------------
+Problem status: LP Optimum found
+Cost is: €14061
+---------------------------------------------------------
+Passenger in Hotel_1 -> 35
+Passenger in Hotel_2 -> 30
+Passenger in Hotel_3 -> 0
+Passenger in Hotel_4 -> 15
+Passenger in Hotel_5 -> 0
+Passenger in Hotel_6 -> 20
+Passenger in Hotel_7 -> 0
+Passenger in Hotel_8 -> 10
+Passenger in Hotel_9 -> 0
+Passenger in Hotel_10 -> 0
+Passenger in Hotel_11 -> 2
+Passenger in Hotel_12 -> 5
+Passenger in Hotel_13 -> 6
+Passenger in Hotel_14 -> 0
+Passenger in Hotel_15 -> 9
+Passenger in Hotel_16 -> 1
+Passenger in Hotel_17 -> 2
+Passenger in Hotel_18 -> 5
+Passenger in Hotel_19 -> 4
+Passenger in Hotel_20 -> 6
+0.0306667
+---------------------------------------------------------
+\ Using Xpress-MP extensions
+Minimize
+ 89 decVar(1) + 99 decVar(2) + 119 decVar(3) + 112 decVar(4) + 143 decVar(5) + 
+94 decVar(6) + 130 decVar(7) + 98 decVar(8) + 155 decVar(9) + 152 decVar(10) + 
+55 decVar(11) + 68 decVar(12) + 99 decVar(13) + 140 decVar(14) + 87 decVar(15) + 
+75 decVar(16) + 78 decVar(17) + 110 decVar(18) + 96 decVar(19) + 74 decVar(20)
+
+Subject To
+_R1: decVar(1) + decVar(2) + decVar(3) + decVar(4) + decVar(5) + decVar(6) + 
+decVar(7) + decVar(8) + decVar(9) + decVar(10) + decVar(11) + decVar(12) + decVar(13) + 
+decVar(14) + decVar(15) + decVar(16) + decVar(17) + decVar(18) + decVar(19) + 
+decVar(20) = 150
+AvgRating: 0.052 decVar(1) + 0.0553333 decVar(2) + 0.0533333 decVar(3) + 0.058 decVar(4) + 
+0.0533333 decVar(5) + 0.054 decVar(6) + 0.0573333 decVar(7) + 0.0593333 decVar(8) + 
+0.0593333 decVar(9) + 0.056 decVar(10) + 0.0633333 decVar(11) + 0.0506667 decVar(12) + 
+0.0633333 decVar(13) + 0.0526667 decVar(14) + 0.0553333 decVar(15) + 0.0546667 decVar(16) + 
+0.066 decVar(17) + 0.0586667 decVar(18) + 0.0533333 decVar(19) + 0.0593333 decVar(20) >= 8.3
+
+Bounds
+decVar(1) <= 35
+decVar(2) <= 30
+decVar(3) <= 15
+decVar(4) <= 15
+decVar(5) <= 15
+decVar(6) <= 20
+decVar(7) <= 15
+decVar(8) <= 10
+decVar(9) <= 10
+decVar(10) <= 20
+decVar(11) <= 2
+decVar(12) <= 5
+decVar(13) <= 6
+decVar(14) <= 7
+decVar(15) <= 9
+decVar(17) <= 2
+decVar(18) <= 5
+decVar(19) <= 4
+decVar(20) <= 6
+
+Integers
+decVar(1) decVar(2) decVar(3) decVar(4) decVar(5) decVar(6) decVar(7) decVar(8) 
+decVar(9) decVar(10) decVar(11) decVar(12) decVar(13) decVar(14) decVar(15) 
+decVar(16) decVar(17) decVar(18) decVar(19) decVar(20) 
+
+End
+---------------------------------------------------------
+End running model
+\end{verbatim}
+
+
+
+\subsection{Case 2: Scale Up to 20 Variables}
+\textbf{Input}
+\begin{verbatim}
+! Data file for `20. Conference Management Assignment 2'
+
+PRICE: [ 89, 99, 119, 112,143,94,130,98,155,152,55,68,99,140,87,75,78,110,96,74,65,5,40,30,30,17,15,89,10,20] !Constraint coefficients	 	
+
+RATING: [7.8,8.3,8.0,8.7,8.0,8.1,8.6,8.9,8.9,8.4,9.5,7.6,9.5,7.9,8.3,8.2,9.9,8.8,8.0,8.9,8.1,8.3,8.2,8.5,8.9,9.5,7.8,9.1,8.1,8.2] !Constraint coefficients
+
+AVAIL:[35,30,15,15,15,20,15,10,10,20,2,5,6,7,9,1,2,5,4,6,2,5,4,6,1,2,3,17,2,5] !Values of the constraints
+\end{verbatim}
+\textbf{Output}
+\begin{verbatim}
+Begin running model
+---------------------------------------------------------
+Problem status: LP Optimum found
+Cost is: €11395
+---------------------------------------------------------
+Passenger in Hotel_1 -> 35
+Passenger in Hotel_2 -> 3
+Passenger in Hotel_3 -> 0
+Passenger in Hotel_4 -> 0
+Passenger in Hotel_5 -> 0
+Passenger in Hotel_6 -> 20
+Passenger in Hotel_7 -> 0
+Passenger in Hotel_8 -> 10
+Passenger in Hotel_9 -> 0
+Passenger in Hotel_10 -> 0
+Passenger in Hotel_11 -> 2
+Passenger in Hotel_12 -> 5
+Passenger in Hotel_13 -> 6
+Passenger in Hotel_14 -> 0
+Passenger in Hotel_15 -> 9
+Passenger in Hotel_16 -> 1
+Passenger in Hotel_17 -> 2
+Passenger in Hotel_18 -> 0
+Passenger in Hotel_19 -> 4
+Passenger in Hotel_20 -> 6
+Passenger in Hotel_21 -> 2
+Passenger in Hotel_22 -> 5
+Passenger in Hotel_23 -> 4
+Passenger in Hotel_24 -> 6
+Passenger in Hotel_25 -> 1
+Passenger in Hotel_26 -> 2
+Passenger in Hotel_27 -> 3
+Passenger in Hotel_28 -> 17
+Passenger in Hotel_29 -> 2
+Passenger in Hotel_30 -> 5
+0.0713333
+---------------------------------------------------------
+\ Using Xpress-MP extensions
+Minimize
+ 89 decVar(1) + 99 decVar(2) + 119 decVar(3) + 112 decVar(4) + 143 decVar(5) + 
+94 decVar(6) + 130 decVar(7) + 98 decVar(8) + 155 decVar(9) + 152 decVar(10) + 
+55 decVar(11) + 68 decVar(12) + 99 decVar(13) + 140 decVar(14) + 87 decVar(15) + 
+75 decVar(16) + 78 decVar(17) + 110 decVar(18) + 96 decVar(19) + 74 decVar(20) + 
+65 decVar(21) + 5 decVar(22) + 40 decVar(23) + 30 decVar(24) + 30 decVar(25) + 
+17 decVar(26) + 15 decVar(27) + 89 decVar(28) + 10 decVar(29) + 20 decVar(30)
+
+Subject To
+_R1: decVar(1) + decVar(2) + decVar(3) + decVar(4) + decVar(5) + decVar(6) + 
+decVar(7) + decVar(8) + decVar(9) + decVar(10) + decVar(11) + decVar(12) + decVar(13) + 
+decVar(14) + decVar(15) + decVar(16) + decVar(17) + decVar(18) + decVar(19) + 
+decVar(20) + decVar(21) + decVar(22) + decVar(23) + decVar(24) + decVar(25) + 
+decVar(26) + decVar(27) + decVar(28) + decVar(29) + decVar(30) = 150
+AvgRating: 0.052 decVar(1) + 0.0553333 decVar(2) + 0.0533333 decVar(3) + 0.058 decVar(4) + 
+0.0533333 decVar(5) + 0.054 decVar(6) + 0.0573333 decVar(7) + 0.0593333 decVar(8) + 
+0.0593333 decVar(9) + 0.056 decVar(10) + 0.0633333 decVar(11) + 0.0506667 decVar(12) + 
+0.0633333 decVar(13) + 0.0526667 decVar(14) + 0.0553333 decVar(15) + 0.0546667 decVar(16) + 
+0.066 decVar(17) + 0.0586667 decVar(18) + 0.0533333 decVar(19) + 0.0593333 decVar(20) + 
+0.054 decVar(21) + 0.0553333 decVar(22) + 0.0546667 decVar(23) + 0.0566667 decVar(24) + 
+0.0593333 decVar(25) + 0.0633333 decVar(26) + 0.052 decVar(27) + 0.0606667 decVar(28) + 
+0.054 decVar(29) + 0.0546667 decVar(30) >= 8.3
+
+Bounds
+decVar(1) <= 35
+decVar(2) <= 30
+decVar(3) <= 15
+decVar(4) <= 15
+decVar(5) <= 15
+decVar(6) <= 20
+decVar(7) <= 15
+decVar(8) <= 10
+decVar(9) <= 10
+decVar(10) <= 20
+decVar(11) <= 2
+decVar(12) <= 5
+decVar(13) <= 6
+decVar(14) <= 7
+decVar(15) <= 9
+decVar(17) <= 2
+decVar(18) <= 5
+decVar(19) <= 4
+decVar(20) <= 6
+decVar(21) <= 2
+decVar(22) <= 5
+decVar(23) <= 4
+decVar(24) <= 6
+decVar(26) <= 2
+decVar(27) <= 3
+decVar(28) <= 17
+decVar(29) <= 2
+decVar(30) <= 5
+
+Integers
+decVar(1) decVar(2) decVar(3) decVar(4) decVar(5) decVar(6) decVar(7) decVar(8) 
+decVar(9) decVar(10) decVar(11) decVar(12) decVar(13) decVar(14) decVar(15) 
+decVar(16) decVar(17) decVar(18) decVar(19) decVar(20) decVar(21) decVar(22) 
+decVar(23) decVar(24) decVar(25) decVar(26) decVar(27) decVar(28) decVar(29) 
+decVar(30) 
+
+End
+---------------------------------------------------------
+End running model
+
+\end{verbatim}
+\bibliographystyle{agsm}
+\addcontentsline{toc}{section}{References} 
+\end{document}
+
