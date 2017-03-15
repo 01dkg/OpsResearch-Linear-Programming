@@ -12,6 +12,7 @@
 \usepackage{lipsum}
 \usepackage{amsmath}
 \usepackage{relsize}
+\usepackage{eurosym}
 \usepackage[most]{tcolorbox}
 \usepackage{inconsolata}
  \usepackage{booktabs}
@@ -30,22 +31,13 @@
 \DeclareOldFontCommand{\sc}{\normalfont\scshape}{\@nomath\sc}
 \DeclareRobustCommand*\cal{\@fontswitch\relax\mathcal}
 \DeclareRobustCommand*\mit{\@fontswitch\relax\mathnormal}
-%----------------------------------------------------------------------------------------
-%	Work Break Down Sturture of Analytics type model
-%----------------------------------------------------------------------------------------
-\usepackage{tikz}
-\usetikzlibrary{arrows,shapes,positioning,shadows,trees}
-\tikzset{
-every node/.style={draw,text width=2cm,drop shadow},
-style1/.style= {rectangle, rounded corners=2pt, thin,align=center,fill=green!30},
-style2/.style= {rectangle, rounded corners=6pt, thin,align=center,fill=yellow!40},
-style3/.style= {rectangle,thin,align=left,fill=pink!60,text width=2.7cm, text height=1.6mm, font=\small}
-}
+
 %----------------------------------------------------------------------------------------
 %	Caption Set & URL Font Control
 %----------------------------------------------------------------------------------------
 \usepackage[font=footnotesize,labelfont=bf]{caption}
 \captionsetup{justification=centering}
+\usepackage{subcaption}
 \urlstyle{rm}
 \usepackage{authblk}
 
@@ -136,46 +128,72 @@ style3/.style= {rectangle,thin,align=left,fill=pink!60,text width=2.7cm, text he
 %\setlength{\parindent}{10ex}
 %Context
 
-\pagenumbering{roman}
-\tableofcontents
-\listoffigures
-\listoftables
-\addcontentsline{toc}{section}{Executive Summary}
-\cleardoublepage
-\clearpage
+%\pagenumbering{roman}
+%\tableofcontents
+%\listoffigures
+%\listoftables
+%\addcontentsline{toc}{section}{Executive Summary}
+%\cleardoublepage
+%\clearpage
 
 %----------------------------------------------------------------------------------------
 %	EXECUTIVE SUMMARY
 %----------------------------------------------------------------------------------------
-\subtitle{\normalsize{Literature Review: Big data Analytics for Healthcare}}
+\subtitle{\normalsize{Optimal Solution for Conference Management}}
 \title{Executive Summary}
-\author{\small{Shruti Goyal, Deepak Kumar Gupta and Dr James McDermott}}
+\author{\small{Shruti Goyal, Deepak Kumar Gupta and Dr Paula Carroll}}
 \date{}
 \maketitle
-\textbf{Objective:} To review big data analytics in healthcare.
+
+Out of 185 available rooms in 10 four star hotel, 150 rooms allocated allocated to delegates using M(I)LP, Mixed integer linear programming optimization model. For given business problem for minimizing organiser cost while maintain average satisfactory rating of each hotel ,minimum cost found is \euro 16207 subject to given constraints and average customer satisfaction rating is 8.30067 for this solution.
 \\
-\\
-\textbf{Methods:} The review describes big data analytics and its implementation in healthcare, highlights gaps in previous studies describes analytical platforms and examples, discusses the existing challenges, offers a conclusion and, states an open question for future work.
-\\
-\\
-\textbf{Results:} The review provides the overview of advancements and changes in big data analytics for 
-practitioners.
-\\
-\\
-\textbf{Conclusion:} Big data analytics implementation in healthcare has seen a tremendous growth over past 6 years. However, there are few challenges which still need to be addressed.
-\\ 
-\\
-\textbf{Keywords:} Healthcare, Data Analytics, Clinics, Systematic Review, Tools and Techniques
+% Please add the following required packages to your document preamble:
+% \usepackage{booktabs}
+\begin{table}[ht]
+\centering
+\begin{tabular}{@{}lccccccccccc@{}}
+\toprule
+Hotel Index                             & 1                       & 2                       & 3                        & 4                        & 5                        & 6                       & 7                        & 8                       & 9                        & 10                       & Total                    \\ \midrule
+\multicolumn{1}{|l|}{Price ( Euro )}    & \multicolumn{1}{c|}{89} & \multicolumn{1}{c|}{99} & \multicolumn{1}{c|}{119} & \multicolumn{1}{c|}{112} & \multicolumn{1}{c|}{143} & \multicolumn{1}{c|}{94} & \multicolumn{1}{c|}{130} & \multicolumn{1}{c|}{98} & \multicolumn{1}{c|}{155} & \multicolumn{1}{c|}{152} & \multicolumn{1}{c|}{-}   \\ \midrule
+\multicolumn{1}{|l|}{Room Availability} & \multicolumn{1}{c|}{35} & \multicolumn{1}{c|}{30} & \multicolumn{1}{c|}{15}  & \multicolumn{1}{c|}{15}  & \multicolumn{1}{c|}{15}  & \multicolumn{1}{c|}{20} & \multicolumn{1}{c|}{15}  & \multicolumn{1}{c|}{10} & \multicolumn{1}{c|}{10}  & \multicolumn{1}{c|}{20}  & \multicolumn{1}{c|}{185} \\ \midrule
+\multicolumn{1}{|l|}{Room Allocated}    & \multicolumn{1}{c|}{35} & \multicolumn{1}{c|}{30} & \multicolumn{1}{c|}{6}   & \multicolumn{1}{c|}{15}  & \multicolumn{1}{c|}{0}   & \multicolumn{1}{c|}{20} & \multicolumn{1}{c|}{15}  & \multicolumn{1}{c|}{10} & \multicolumn{1}{c|}{10}  & \multicolumn{1}{c|}{9}   & \multicolumn{1}{c|}{150} \\ \midrule
+Cost                            & \euro 3115                    & \euro 2970                    & \euro 714                      & 1680                     &  \euro 0                        & \euro 1880                    & \euro 1950                     & \euro 980                     &  \euro 1550                     & \euro 1368                     & \euro 16207                    \\ \bottomrule
+\end{tabular}
+\caption{Number of Rooms allocated to Delegates in each Hotel}
+\label{my-label}
+\end{table}
+
+\begin{figure}[ht]
+\centering
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[scale=0.65]{es1.png}
+  \caption{Rooms Availability vs Allocated }
+  \label{fig:sub1}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[scale=0.65]{es2.png}
+  \caption{Total Cost for Each Hotel (\euro)}
+  \label{fig:sub2}
+\end{subfigure}
+\caption{ Optimal cost and number of rooms allocated } 
+\label{fig:es}
+\end{figure}
 \clearpage	
 %----------------------------------------------------------------------------------------
 %	ABSTRACT SECTION
 %----------------------------------------------------------------------------------------
-\begin{abstract}
+
 \title{Abstract}
-Yayayayay
+\maketitle
+\begin{abstract}
+A summary of major research/methodological
+contributions. Used in research papers and
+documents.
 \end{abstract}
 \newpage 
-\pagenumbering{arabic}
+
 
 %----------------------------------------------------------------------------------------
 %	BACKGROUND
@@ -194,7 +212,7 @@ customer satisfaction rate of at least 8.3. Formulate an (I)LP model of this pro
 \begin{tabular}{@{}|l|l|l|l|l|l|l|l|l|l|l|@{}}
 \toprule
 Hotel Index       & 1   & 2   & 3   & 4   & 5   & 6   & 7   & 8   & 9   & 10  \\ \midrule
-Price (euro)     & 89  & 99  & 119 & 112 & 143 & 94  & 130 & 98  & 155 & 152 \\ \midrule
+Price (\euro)     & 89  & 99  & 119 & 112 & 143 & 94  & 130 & 98  & 155 & 152 \\ \midrule
 Customer rating   & 7.8 & 8.3 & 8   & 8.7 & 8   & 8.1 & 8.6 & 8.9 & 8.9 & 8.4 \\ \midrule
 Room Availability & 35  & 30  & 15  & 15  & 15  & 20  & 15  & 10  & 10  & 20  \\ \bottomrule
 \end{tabular}
@@ -212,16 +230,28 @@ Room Availability & 35  & 30  & 15  & 15  & 15  & 20  & 15  & 10  & 10  & 20  \\
 
 \section{Introduction}
 
-Discussion about research papers
+Operation research provides mathematical programming techniques for solving real life problems subject to constraints. Whereas linear programming uses the basis mathematical programming for a linear equation objective function $f(z)$ and a set of constraints equations which are set of linear inequalities or equality  constraints.
 \\
-\begin{figure}[ht]
-\centering
-	\includegraphics[scale = 0.7]{logo.png} 
-	\caption{Four V's of Big Data}
-	\caption*{Source: \url{http://www.datasciencecentral.com/profiles/blogs/data-veracity}}	
-\end{figure}
+\\
+An integer (linear) programming (IP) problem is a linear programming problem in which some or all of the decision variables are restricted to be integer valued. In some real scenarios we can not allocate fractional of something, for example: 3 $\frac{1}{2}$ teachers required for a class of 100 students, but 3 $\frac{1}{2}$ teachers is not possible. That is why we require integer (linear) programming for solving such real life problems.
+\\
 
-then discuss about integer programming take some example from internet to demostrate
+\subsection{Paper 1 Modeling a cruise line revenue management problem}
+\subparagraph{Li, Yihua, Qing Miao, and Bruce X. Wang. "Modeling a cruise line revenue management problem." Journal of Revenue and Pricing Management 13.3 (2014): 247-260.}
+Cruise line is special tourism service has some similarity and dissimilarity with hotel industry. At a company, revenue management of Cruise line still a research topic in Operation Research, as this industry receive little focused compared to airline and hotel industry. Here, Objective is to maximize the Cruise revenue by sales of rooms for each sailing. Pricing for a room in Cruise is per person basis, whereas in Hotel there is marginal difference between single bed room and double room fare. This is because, Cruise has to make additional arrangement per person in terms of food, consumptions etc.
+\\
+\\
+Dynamic Programming is not suitable for this case because it take longer time to process and difficult to manage with multiple dependent constraints. Therefore, Linear (integer) programming is best optimization model for this case using linear objective equations and linear constraints equations. This model can be repeatedly applied for capacity allocation and pricing.
+\\
+\\
+Capacity Limitation:\\
+1. Ship do not accept more than 2.5 or 3 person per room\\
+2. Number of total seats on lifeboats\\
+3. Number of rooms available for each room category\\
+
+Similarity \& Dissimilarity with given business problem:\\
+Cruise line revenue management require integer programming as a room can not booked in fractions. Each cruise ship has 800 rooms, and each room is classified into 12 segment according to its size, location, view, capacity etc.  Here, we can relate Hotel Index in Conference management problem with room segments, rating of each hotel room with its segment factors i,e size, location, view and room availability is similar to number of available rooms under each segment. However, Cruise line problem is about maximizing the revenue and pricing, whereas conference management problem about minimizing cost while achieving average customer satisfaction rating.
+
 \section{Methodology}
 
 We have total delegates 150 and 10 four star hotels to accommodate guests
@@ -268,7 +298,8 @@ Also take previous assignment example to contrast the need on MILP
 %----------------------------------------------------------------------------------------
 
 \section{Conclusions}
-
+\clearpage
+\pagenumbering{roman}
 \appendix
 \section{Code}
 \begin{sexylisting}{Craft Brewer: LP Model}

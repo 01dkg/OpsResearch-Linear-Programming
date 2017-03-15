@@ -41,7 +41,9 @@ uses "mmxprs"; !gain access to the Xpress-Optimizer solver
 		decVar(i) is_integer
 	end-do
 	
-	AvgRating:= (sum(i in HI) RATING(i)*decVar(i))/150 >= 8.3
+	temp := (sum(i in HI) RATING(i)*decVar(i))/Max_Guest
+	
+	AvgRating:= (sum(i in HI) RATING(i)*decVar(i))/Max_Guest >= 8.3
 			 
 	forall( i in HI)
 		decVar(i) <= AVAIL(i)	 	
@@ -59,7 +61,7 @@ uses "mmxprs"; !gain access to the Xpress-Optimizer solver
 			writeln("Passenger in Hotel_",i," -> ", getsol(decVar(i)))
 			
 		!write value of AvgRating to output
-		writeln(getsol(AvgRating))
+		writeln("Avg. Rating ", getsol(temp))
 		writeln("---------------------------------------------------------")
 		exportprob(EP_MIN,"",Cost)
 		writeln("---------------------------------------------------------")

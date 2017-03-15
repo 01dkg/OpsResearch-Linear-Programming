@@ -4,10 +4,10 @@
 \contentsline {section}{\numberline {2}Introduction}{1}
 \contentsline {section}{\numberline {3}Methodology}{1}
 \contentsline {section}{\numberline {4}Analysis of Results}{2}
-\contentsline {section}{\numberline {5}Conclusions}{2}
-\contentsline {section}{\numberline {A}Code}{5}
-\contentsline {section}{\numberline {B}Input and Output}{6}
-\contentsline {subsection}{\numberline {B.1}Case 1: Original Data (10 Variables)}{6}
-\contentsline {subsection}{\numberline {B.2}Case 2: Scale Up to 20 Variables}{7}
-\contentsline {subsection}{\numberline {B.3}Case 2: Scale Up to 20 Variables}{8}
-\contentsline {section}{References}{10}
+\contentsline {section}{\numberline {5}Conclusions}{4}
+\contentsline {section}{\numberline {A}Code}{4}
+\contentsline {section}{\numberline {B}Input and Output}{5}
+\contentsline {subsection}{\numberline {B.1}Case 1: Original Data (10 Variables)}{5}
+\contentsline {subsection}{\numberline {B.2}Case 2: Scale Up to 20 Variables}{6}
+\contentsline {subsection}{\numberline {B.3}Case 2: Scale Up to 20 Variables}{7}
+\contentsline {section}{References}{9}
