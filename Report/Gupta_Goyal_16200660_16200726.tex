@@ -251,7 +251,15 @@ Capacity Limitation:\\
 
 Similarity \& Dissimilarity with given business problem:\\
 Cruise line revenue management require integer programming as a room can not booked in fractions. Each cruise ship has 800 rooms, and each room is classified into 12 segment according to its size, location, view, capacity etc.  Here, we can relate Hotel Index in Conference management problem with room segments, rating of each hotel room with its segment factors i,e size, location, view and room availability is similar to number of available rooms under each segment. However, Cruise line problem is about maximizing the revenue and pricing, whereas conference management problem about minimizing cost while achieving average customer satisfaction rating.
-
+\subsection{Paper 2}
+Baur, A., Klein, R. \& Steinhardt, C. OR Spectrum (2014) 36: 557. doi:10.1007/s00291-013-0338-3
+Overview
+\\
+Methods
+\\
+LP Model
+\\
+Similarity \& Dissimilarity with given business problem:\\ 
 \section{Methodology}
 
 We have total delegates 150 and 10 four star hotels to accommodate guests
@@ -259,7 +267,7 @@ We need to minimize the cost while achieving minimum average rating:
 \\
 Lets say $HI$ as $Hotel$ $Index$:
 \\
-
+\textbf{Mention about non negative equations as well}
 Objective is: 
 \begin{equation}
 minimize{(Cost)}
@@ -279,7 +287,26 @@ Constraint 3:
 decVar(HI) <= Avail(HI), HI \in \{1,10\}
 \end{equation}
 
-
+\begin{table}[!h]
+\centering
+\begin{tabular}{@{}ccc@{}}
+\toprule
+\textbf{Hotel Index}     & \textbf{LP Model}         & \textbf{(I)LP Model}    \\ \midrule
+\multicolumn{1}{|c|}{1}  & \multicolumn{1}{c|}{35}   & \multicolumn{1}{c|}{35} \\ \midrule
+\multicolumn{1}{|c|}{2}  & \multicolumn{1}{c|}{30}   & \multicolumn{1}{c|}{30} \\ \midrule
+\multicolumn{1}{|c|}{3}  & \multicolumn{1}{c|}{6.25} & \multicolumn{1}{c|}{6}  \\ \midrule
+\multicolumn{1}{|c|}{4}  & \multicolumn{1}{c|}{15}   & \multicolumn{1}{c|}{15} \\ \midrule
+\multicolumn{1}{|c|}{5}  & \multicolumn{1}{c|}{0}    & \multicolumn{1}{c|}{0}  \\ \midrule
+\multicolumn{1}{|c|}{6}  & \multicolumn{1}{c|}{20}   & \multicolumn{1}{c|}{20} \\ \midrule
+\multicolumn{1}{|c|}{7}  & \multicolumn{1}{c|}{15}   & \multicolumn{1}{c|}{15} \\ \midrule
+\multicolumn{1}{|c|}{8}  & \multicolumn{1}{c|}{10}   & \multicolumn{1}{c|}{10} \\ \midrule
+\multicolumn{1}{|c|}{9}  & \multicolumn{1}{c|}{10}   & \multicolumn{1}{c|}{10} \\ \midrule
+\multicolumn{1}{|c|}{10} & \multicolumn{1}{c|}{8.75} & \multicolumn{1}{c|}{9}  \\ \midrule
+\multicolumn{1}{|c|}{Total Cost} & \multicolumn{1}{c|}{\euro 16198.8} & \multicolumn{1}{c|}{\euro 16207}  \\ \midrule
+\end{tabular}
+\caption{Comparison of Output LP Model with Integer LP Model}
+\label{tab:ilpmodel}
+\end{table}
 
 %----------------------------------------------------------------------------------------
 %	RESULTS AND ANALYSIS
@@ -287,12 +314,17 @@ decVar(HI) <= Avail(HI), HI \in \{1,10\}
 
 \section{Analysis of Results}
 
+
+
+Clearly, optimized cost is different in LP Model and Integer Linear Programming model. It is due to output value of decision variables in (I)LP are integer number and decision variables in LP model  are real number. It is clear  From Table~\ref{tab:ilpmodel} that value of decision variable for Hotel Index 3 and 10 is different in LP and (I)LP model. Final optimal cost for conference management has a difference of 0.0506\% between LP and (I)LP model.
+\\
+\\
+For given problem of conference management, optimal cost of accommodating 150 guests in hotel is \euro 16207 and achieving average customer satisfaction rating of 8.3.
 Compare non integer and integer solutions
 
 Why interger programming is required
 
 Also take previous assignment example to contrast the need on MILP
-
 %----------------------------------------------------------------------------------------
 %	CONCLUSIONS
 %----------------------------------------------------------------------------------------
@@ -300,9 +332,10 @@ Also take previous assignment example to contrast the need on MILP
 \section{Conclusions}
 \clearpage
 \pagenumbering{roman}
-\appendix
+\appendix{\LARGE{\textbf{Appendix}}}
+
 \section{Code}
-\begin{sexylisting}{Craft Brewer: LP Model}
+\begin{verbatim}
 model Conference_Management
 uses "mmxprs"; !gain access to the Xpress-Optimizer solver
 	declarations
@@ -374,7 +407,7 @@ uses "mmxprs"; !gain access to the Xpress-Optimizer solver
 	minimize(Cost)
 	print_sol	
 end-model
-\end{sexylisting}
+\end{verbatim}
 \section{Input and Output}
 \subsection{Case 1: Original Data (10 Variables)}
 \textbf{Input}

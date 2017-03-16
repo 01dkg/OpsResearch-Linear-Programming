@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6100 64-bit) (preloaded format=pdflatex 2017.1.7)  15 MAR 2017 16:41
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6100 64-bit) (preloaded format=pdflatex 2017.1.7)  16 MAR 2017 07:10
 entering extended mode
 **./Gupta_Goyal_16200660_16200726.tex
 (Gupta_Goyal_16200660_16200726.tex
@@ -1354,26 +1354,28 @@ Package Fancyhdr Warning: \headheight is too small (17.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [4]
-Underfull \hbox (badness 10000) in paragraph at lines 257--262
+Underfull \hbox (badness 10000) in paragraph at lines 255--263
 
  []
 
-LaTeX Font Info:    Calculating math sizes for size <13.13995> on input line 26
-9.
+LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <10.95> not available
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 270.
+LaTeX Font Info:    Calculating math sizes for size <13.13995> on input line 27
+7.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <13.13995> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 269.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 277.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9.72363> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 269.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 277.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.88405> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 269.
-LaTeX Font Info:    Calculating math sizes for size <15.76788> on input line 26
-9.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 277.
+LaTeX Font Info:    Calculating math sizes for size <15.76788> on input line 27
+7.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <15.76788> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 269.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 277.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <11.66832> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 269.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 277.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9.46082> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 269.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 277.
 Missing character: There is no â in font zptmcm7t!
 Missing character: There is no € in font zptmcm7t!
 Missing character: There is no Ž in font zptmcm7t!
@@ -1444,130 +1446,69 @@ Missing character: There is no â in font zptmcm7t!
 Missing character: There is no € in font zptmcm7t!
 Missing character: There is no Ž in font zptmcm7t!
 [5]
-\openout4 = `Gupta_Goyal_16200660_16200726.listing'.
+Underfull \hbox (badness 10000) in paragraph at lines 319--324
 
-LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <10.95> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 377.
- (C:\Users\Deepak\AppData\Roaming\MiKTeX\2.9\tex\latex\listings\lstlang1.sty
-File: lstlang1.sty 2015/06/04 1.6 listings language file
-) (C:\Users\Deepak\AppData\Roaming\MiKTeX\2.9\tex\latex\listings\lstlang2.sty
-File: lstlang2.sty 2015/06/04 1.6 listings language file
-)
-(C:\Users\Deepak\AppData\Roaming\MiKTeX\2.9\tex\latex\listings\lstlang3.sty
-File: lstlang3.sty 2015/06/04 1.6 listings language file
-)
-LaTeX Font Info:    Try loading font information for T1+zi4 on input line 377.
+ []
 
-(C:\Users\Deepak\AppData\Roaming\MiKTeX\2.9\tex\latex\inconsolata\t1zi4.fd
+[6]
+LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <17.28> not available
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 335.
+LaTeX Font Info:    Try loading font information for T1+zi4 on input line 338.
+ (C:\Users\Deepak\AppData\Roaming\MiKTeX\2.9\tex\latex\inconsolata\t1zi4.fd
 File: t1zi4.fd 2016/12/29 T1/zi4 (Inconsolata)
 )
 LaTeX Font Info:    Font shape `T1/zi4/m/n' will be
-(Font)              scaled to size 10.95pt on input line 377.
+(Font)              scaled to size 10.95pt on input line 338.
+LaTeX Font Info:    Try loading font information for TS1+zi4 on input line 351.
 
-(Gupta_Goyal_16200660_16200726.listing
-LaTeX Font Info:    Font shape `T1/zi4/bx/n' in size <10.95> not available
-(Font)              Font shape `T1/zi4/b/n' tried instead on input line 1.
-LaTeX Font Info:    Font shape `T1/zi4/b/n' will be
-(Font)              scaled to size 10.95pt on input line 1.
-
-Underfull \hbox (badness 10000) in paragraph at lines 4--5
-[][][][][][][][][][]
- []
-
-
-Overfull \hbox (158.61601pt too wide) in paragraph at lines 6--7
-[][][][][][][][][][][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (145.4759pt too wide) in paragraph at lines 7--8
-[][][][][][][][][][][][][][][][][][][][][][][][][][][] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 8--9
-[][][][][][][][][][][][][][][][]
- []
-
-
-Overfull \hbox (99.48557pt too wide) in paragraph at lines 53--54
-[][][][][][][][][] 
- []
-
-
-Overfull \hbox (99.48557pt too wide) in paragraph at lines 56--57
-[][][][][][][][][] 
- []
-
-
-Overfull \hbox (86.34546pt too wide) in paragraph at lines 58--60
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (99.48557pt too wide) in paragraph at lines 62--63
-[][][][][][][][][] 
- []
-
-
-Overfull \hbox (99.48557pt too wide) in paragraph at lines 64--65
-[][][][][][][][][] 
- []
-
-) [1
-
-]
-Overfull \vbox (333.69513pt too high) has occurred while \output is active []
-
-
-[2]
-LaTeX Font Info:    Try loading font information for TS1+zi4 on input line 382.
-
- (C:\Users\Deepak\AppData\Roaming\MiKTeX\2.9\tex\latex\inconsolata\ts1zi4.fd
+(C:\Users\Deepak\AppData\Roaming\MiKTeX\2.9\tex\latex\inconsolata\ts1zi4.fd
 File: ts1zi4.fd 2016/12/29 TS1/zi4 (Inconsolata)
 )
 LaTeX Font Info:    Font shape `TS1/zi4/m/n' will be
-(Font)              scaled to size 10.95pt on input line 382.
- [3]
-Overfull \hbox (78.37616pt too wide) in paragraph at lines 447--447
+(Font)              scaled to size 10.95pt on input line 351.
+
+[1
+
+] [2]
+Overfull \hbox (78.37616pt too wide) in paragraph at lines 480--480
 []\T1/zi4/m/n/10.95 PRICE: [ 89, 99, 119, 112,143,94,130,98,155,152,55,68,99,14
 0,87,75,78,110,96,74] !Constraint coefficients[] 
  []
 
 
-Overfull \hbox (134.96596pt too wide) in paragraph at lines 449--449
+Overfull \hbox (134.96596pt too wide) in paragraph at lines 482--482
 []\T1/zi4/m/n/10.95 RATING: [7.8,8.3,8.0,8.7,8.0,8.1,8.6,8.9,8.9,8.4,9.5,7.6,9.
 5,7.9,8.3,8.2,9.9,8.8,8.0,8.9] !Constraint coefficients[] 
  []
 
-[4]
-Overfull \hbox (237.1509pt too wide) in paragraph at lines 538--538
+[3] [4]
+Overfull \hbox (237.1509pt too wide) in paragraph at lines 571--571
 []\T1/zi4/m/n/10.95 PRICE: [ 89, 99, 119, 112,143,94,130,98,155,152,55,68,99,14
 0,87,75,78,110,96,74,65,5,40,30,30,17,15,89,10,20] !Constraint coefficients[] 
  []
 
 
-Overfull \hbox (353.96559pt too wide) in paragraph at lines 540--540
+Overfull \hbox (353.96559pt too wide) in paragraph at lines 573--573
 []\T1/zi4/m/n/10.95 RATING: [7.8,8.3,8.0,8.7,8.0,8.1,8.6,8.9,8.9,8.4,9.5,7.6,9.
 5,7.9,8.3,8.2,9.9,8.8,8.0,8.9,8.1,8.3,8.2,8.5,8.9,9.5,7.8,9.1,8.1,8.2] !Constra
 int coefficients[] 
  []
 
 
-Overfull \hbox (83.86232pt too wide) in paragraph at lines 542--542
+Overfull \hbox (83.86232pt too wide) in paragraph at lines 575--575
 []\T1/zi4/m/n/10.95 AVAIL:[35,30,15,15,15,20,15,10,10,20,2,5,6,7,9,1,2,5,4,6,2,
 5,4,6,1,2,3,17,2,5] !Values of the constraints[] 
  []
 
 [5] [6] [7] (Gupta_Goyal_16200660_16200726.aux) ) 
 Here is how much of TeX's memory you used:
- 32605 strings out of 493333
- 652507 string characters out of 3139192
- 939675 words of memory out of 3000000
- 35571 multiletter control sequences out of 15000+200000
- 87836 words of font info for 133 fonts, out of 3000000 for 9000
+ 31672 strings out of 493333
+ 641031 string characters out of 3139192
+ 871376 words of memory out of 3000000
+ 34651 multiletter control sequences out of 15000+200000
+ 90335 words of font info for 134 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 65i,14n,105p,10514b,1995s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 65i,14n,105p,10514b,643s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/Deepak/AppData/Roami
 ng/MiKTeX/2.9/fonts/enc/dvips/inconsolata/i4-ts1.enc}{C:/Users/Deepak/AppData/R
 oaming/MiKTeX/2.9/fonts/enc/dvips/inconsolata/i4-t1-0.enc} <C:\Users\Deepak\App
@@ -1577,16 +1518,15 @@ Data\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecsx1200.pk> <C:\Users
 Data\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecsx1095.pk> <C:\Users
 \Deepak\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecsx2074.pk
 ><C:/Users/Deepak/AppData/Roaming/MiKTeX/2.9/fonts/type1/public/inconsolata/Inc
-onsolata-zi4b.pfb><C:/Users/Deepak/AppData/Roaming/MiKTeX/2.9/fonts/type1/publi
-c/inconsolata/Inconsolata-zi4r.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pub
-lic/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsf
-onts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/c
-msy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/eurosym/feymr10.pfb><
-C:/Users/Deepak/AppData/Roaming/MiKTeX/2.9/fonts/type1/urw/symbol/usyr.pfb><C:/
-Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files/MiK
-TeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/typ
-e1/urw/times/utmri8a.pfb>
-Output written on Gupta_Goyal_16200660_16200726.pdf (12 pages, 355122 bytes).
+onsolata-zi4r.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/c
+mmi10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb
+><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Pro
+gram Files/MiKTeX 2.9/fonts/type1/public/eurosym/feymr10.pfb><C:/Users/Deepak/A
+ppData/Roaming/MiKTeX/2.9/fonts/type1/urw/symbol/usyr.pfb><C:/Program Files/MiK
+TeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/typ
+e1/urw/times/utmr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmr
+i8a.pfb>
+Output written on Gupta_Goyal_16200660_16200726.pdf (13 pages, 337431 bytes).
 PDF statistics:
  271 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
