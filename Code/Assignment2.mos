@@ -39,6 +39,7 @@ uses "mmxprs"; !gain access to the Xpress-Optimizer solver
 	!Declare that our decision variables are integers
 	forall (i in HI) do 
 		decVar(i) is_integer
+		decVar(i)>=0
 	end-do
 	
 	temp := (sum(i in HI) RATING(i)*decVar(i))/Max_Guest

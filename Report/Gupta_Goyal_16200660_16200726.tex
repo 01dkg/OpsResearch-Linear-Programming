@@ -182,20 +182,6 @@ Cost                            & \euro 3115                    & \euro 2970    
 \end{figure}
 \clearpage	
 %----------------------------------------------------------------------------------------
-%	ABSTRACT SECTION
-%----------------------------------------------------------------------------------------
-
-\title{Abstract}
-\maketitle
-\begin{abstract}
-A summary of major research/methodological
-contributions. Used in research papers and
-documents.
-\end{abstract}
-\newpage 
-
-
-%----------------------------------------------------------------------------------------
 %	BACKGROUND
 %----------------------------------------------------------------------------------------
 \section{Background}
@@ -236,58 +222,126 @@ Operation research provides mathematical programming techniques for solving real
 An integer (linear) programming (IP) problem is a linear programming problem in which some or all of the decision variables are restricted to be integer valued. In some real scenarios we can not allocate fractional of something, for example: 3 $\frac{1}{2}$ teachers required for a class of 100 students, but 3 $\frac{1}{2}$ teachers is not possible. That is why we require integer (linear) programming for solving such real life problems.
 \\
 
-\subsection{Paper 1 Modeling a cruise line revenue management problem}
-\subparagraph{Li, Yihua, Qing Miao, and Bruce X. Wang. "Modeling a cruise line revenue management problem." Journal of Revenue and Pricing Management 13.3 (2014): 247-260.}
-Cruise line is special tourism service has some similarity and dissimilarity with hotel industry. At a company, revenue management of Cruise line still a research topic in Operation Research, as this industry receive little focused compared to airline and hotel industry. Here, Objective is to maximize the Cruise revenue by sales of rooms for each sailing. Pricing for a room in Cruise is per person basis, whereas in Hotel there is marginal difference between single bed room and double room fare. This is because, Cruise has to make additional arrangement per person in terms of food, consumptions etc.
-\\
-\\
-Dynamic Programming is not suitable for this case because it take longer time to process and difficult to manage with multiple dependent constraints. Therefore, Linear (integer) programming is best optimization model for this case using linear objective equations and linear constraints equations. This model can be repeatedly applied for capacity allocation and pricing.
-\\
-\\
-Capacity Limitation:\\
+\subsection{Research Paper Review: 1}
+Li, Yihua, Qing Miao, and Bruce X. Wang. "Modeling a cruise line revenue management problem." Journal of Revenue and Pricing Management 13.3 (2014): 247-260. \\
+
+In last 3 decades, Cruise line has seen tremendous increase in number of customers, fleet size of cruise etc. however, this segment received less focus from researcher on revenue optimization. Over last 10 years, average price has decreased due to increase in cruise line and competition among different service provider. Cruise line has some similarity with hotel and airline industry, but cruise line has different pricing model and higher occupancy rate. Here, Objective is to maximize the Cruise revenue by sales of rooms for each sailing. Pricing for a room in Cruise is per person basis because cruise has to make additional arrangement per person in terms of food, consumptions etc, whereas in Hotel there is marginal difference between single bed room and double room fare. \\
+
+\textbf{Methods:}\\
+Dynamic Programming is not suitable for this case because it take longer time to process and difficult to manage with multiple dependent constraints. Therefore, Linear (integer) programming is best optimization model for this case using linear objective equations and linear constraints equations. This model can be repeatedly applied for capacity allocation and pricing. problem formulation with linear equations and constraint equations has 648 binary variables and 648 non negative variables along with 852 constraints.\\
+
+\textbf{Limitations in Cruise line industry:}\\
 1. Ship do not accept more than 2.5 or 3 person per room\\
 2. Number of total seats on lifeboats\\
 3. Number of rooms available for each room category\\
 
-Similarity \& Dissimilarity with given business problem:\\
-Cruise line revenue management require integer programming as a room can not booked in fractions. Each cruise ship has 800 rooms, and each room is classified into 12 segment according to its size, location, view, capacity etc.  Here, we can relate Hotel Index in Conference management problem with room segments, rating of each hotel room with its segment factors i,e size, location, view and room availability is similar to number of available rooms under each segment. However, Cruise line problem is about maximizing the revenue and pricing, whereas conference management problem about minimizing cost while achieving average customer satisfaction rating.
-\subsection{Paper 2}
-Baur, A., Klein, R. \& Steinhardt, C. OR Spectrum (2014) 36: 557. doi:10.1007/s00291-013-0338-3
-Overview
-\\
-Methods
-\\
-LP Model
-\\
-Similarity \& Dissimilarity with given business problem:\\ 
+\textbf{Comparison with Conference Management business problem: }\\
+Cruise line revenue management require integer programming as room can not booked in fractions. Each cruise ship has 800 rooms, and each room is classified into 12 segment according to its size, location, view, capacity etc. Guests are charged according of three types of fare: Double occupancy (DO), extra adults(XA), and extra child (XC) with each fare type has 18 fare tiers.\\
+
+Here, we can relate Hotel Index in Conference management problem with room segments, rating of each hotel room with its segment factors i,e size, location, view and room availability is similar to number of available rooms under each segment. However, Cruise line problem is about maximizing the revenue and pricing, whereas conference management problem about minimizing cost while achieving average customer satisfaction rating.
+
+\subsection{Research Paper Review: 1}
+Baur, A., Klein, R. \& Steinhardt, C. OR Spectrum (2014) 36: 557. doi:10.1007/s00291-013-0338-3 \\ \\
+TUI Deutschland is the Germany's leading tour operator organisation who wants to design its tour operator brochure for optimal hotel room prices which will be valid for atleast 6 months. The task of determining hotel room prices is being done manually by number of specialists; who are responsible for setting of 100,000 prices. The objective of the paper is to develop a decision support system to accomplish the task without much manual effort.\\ 
+
+Paper states that majority of the customers buy holiday packages via brochures that they can get from their local agencies and can choose their desired holiday. While setting prices some factors have to be considered such as purchase prices, hotel ratings, competitor offerings and customer preferences. Before publishing brochures, specialist have to consider following for every hotel : \\ \\
+1. Total number of seasons to be displayed\\
+2. Price of each room according to season\\
+3. How to assign a season to each day \\ \\
+Major challenge specialist faced is to finding a trade off between maximum profit and easily understandable price brochure. \\ \\
+\textbf{Methods:}
+\\ \\
+Earlier while developing pricing model, pricing specialists focuses more on customer preferences and their demand. Whereas, paper presented a different approach by taking into account customer's choice that can be estimated from past data. Paper has combined two approaches i.e. predictive analytics and prescriptive analytics : \\
+1. \textbf{Predictive Analytics} aims at customer choice and demand dependencies for different hotel and room alternatives, to determine price optimization. Demand for a product has been calculated by dividing its attractiveness by sum of attractiveness of all available options. \\
+2. \textbf{Prescriptive Analytics} focuses on optimization techniques and models. Paper has introduced fractional mixed integer programming to optimized sum of ratios.  \\ 
+
+\textbf{Comparison with Conference Management business problem: }\\ \\
+Paper introduced mixed integer programming model for determining price optimization process for tour brochures while taking into account customer demand, hotel ratings, room prices; which is similar to conference management problem that is also based on M(I)LP model constraints to hotel ratings, hotel room prices and room availability. MIP model for pricing strategy is a two fold decision support system which also examine behaviour of the model in practice i.e. number of decision support scenarios. Model first has been formulated into general MIP model by defining few additional variables for specific day and customer segments and then reformulated the model based on season type. \\ \\
+So, overall objective of the Brochure Price Process model is to calculate a single price strategy model for all hotel room types that can be published in the brochure for maximising sales of the holiday packages. Whilst, conference management model aims at minimising cost in order to accommodate all delegates at the given hotels. Though both the models are somewhat similar based on the type of the model used and similar constraints.
+
 \section{Methodology}
 
-We have total delegates 150 and 10 four star hotels to accommodate guests
-We need to minimize the cost while achieving minimum average rating:
-\\
-Lets say $HI$ as $Hotel$ $Index$:
-\\
-\textbf{Mention about non negative equations as well}
-Objective is: 
+
+Assumptions:
+\begin{itemize}
+\item Hotel Index is non-negative index number and always start from 
+\item Price of each hotel is always non \- zero and non\-negative 
+\item There are only 10 four star hotel and there is no other hotel, where delegates can stay
+\item It is assumed that room booking is confirmed and non-refundable, while calculating final cost
+\item It is assumed that hotel has flat price for each room, irrespective of length for which delegates stay in hotel
+\item All other cost such as food consumption, chauffeur, laundry service etc is not considered while calculating optimal cost
+
+
+\item Proportionality - The contribution of each decision variable
+to the objective or constraint is directly proportional to the
+value of the decision variable.
+\item Additivity - The contribution to the objective function or
+constraint for any variable is independent of the values of the
+other decision variables, and the terms can be added together.
+\item Divisibility - The decision variables are continuous and thus
+can take on fractional values.
+\item Deterministic - All the parameters (objective function
+coefficients, right-hand side coefficients, left-hand side, or
+technology, coefficients) are known with certainty
+\end{itemize}
+
+We have total delegates 150 and 10 four star hotels to accommodate guests. We need to minimize the cost while achieving minimum average rating of 8.3:\\
+
+Lets say $HI$ as $Hotel$ $Index$, $devVar(HI)$ as decision variable, $Avail$ as Room Availability and $Rating$ as Customer rating:\\
+
+\textbf{Resource Availability:}
+\begin{itemize}
+\item 150 delegates
+\item 10 four star hotels in city center
+\item 185 rooms available to allocate
+\end{itemize}
 \begin{equation}
-minimize{(Cost)}
+decVar(HI) ,\ where\ HI = 1,2,3,4,5,6,7,8,9,10
 \end{equation}
-Constraint 1: 
+
+\textbf{Decision Variables:} 10 decision variables for each hotel index (HI)
+\begin{equation}
+decVar(HI) ,\ where\ HI = 1,2,3,4,5,6,7,8,9,10
+\end{equation}
+
+\textbf{Objective Function:} 
+
 \begin{equation}
 ‎‎Cost‎ ‎=‎ \mathlarger{\mathlarger{‎‎\sum}}_{HI=1}^{10}{Price(HI)* decVar(HI}
 \end{equation}
-
-Constraint 2: 
 \begin{equation}
-Avg. Rating ‎=‎ \frac{\mathlarger{\mathlarger{‎‎\sum}}_{HI=1}^{10}{Rating(HI)*decVar(HI))}}{150}
+minimize{(Cost)},\ \text{cost for allocating hotel room to 150 delegates}
 \end{equation}
 
-Constraint 3: 
+
+\textbf{ Resource Constraint:} \\
+
+Achieving  average customer satisfaction rating of at least 8.3 while allocating room to delegates, 
+\begin{equation}
+Avg. Rating ‎=‎ \frac{\mathlarger{\mathlarger{‎‎\sum}}_{HI=1}^{10}{Rating(HI)*decVar(HI))}}{150} \leq 8.3
+\end{equation}
+\\Coefficient of  each decision variable should be less than equal to room availability in each hotel
 \begin{equation}
 decVar(HI) <= Avail(HI), HI \in \{1,10\}
 \end{equation}
 
-\begin{table}[!h]
+\textbf{Non-negative and Integer Constraint:}\\
+
+Coefficient of each decision variable is integer and non-negative 
+\begin{equation}
+		decVar(i)\ is\_integer
+\end{equation}
+\begin{equation}
+		decVar(i)>=0
+\end{equation}
+
+%----------------------------------------------------------------------------------------
+%	RESULTS AND ANALYSIS
+%----------------------------------------------------------------------------------------
+
+\section{Analysis of Results}
+
+\begin{table}[ht]
 \centering
 \begin{tabular}{@{}ccc@{}}
 \toprule
@@ -307,24 +361,69 @@ decVar(HI) <= Avail(HI), HI \in \{1,10\}
 \caption{Comparison of Output LP Model with Integer LP Model}
 \label{tab:ilpmodel}
 \end{table}
+\subsection{Optimal Solution of Conference Management}
+Clearly, optimized cost is different in LP Model and Integer Linear Programming model. It is due to output value of decision variables in (I)LP are integer number and decision variables in LP model  are real number. It is clear from Table~\ref{tab:ilpmodel} that value of decision variable for Hotel Index 3 and 10 is different in LP and (I)LP model. Final optimal cost for conference management has a difference of 0.0506\% between LP and (I)LP model.\\ 
 
-%----------------------------------------------------------------------------------------
-%	RESULTS AND ANALYSIS
-%----------------------------------------------------------------------------------------
+By implementing Integer Linear programming model for given problem of conference management, optimal cost of accommodating 150 delegates in hotel is \euro 16207 and achieving avg. customer satisfaction rating of 8.3\\
 
-\section{Analysis of Results}
+\subsection{Scalability}
 
+\begin{figure}[!ht]
+\centering
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[scale=.8]{g1.png}
+  \caption{MIP gap}
+  \label{fig:sub1}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[scale=.7]{g2.png}
+  \caption{MIP Objective}
+  \label{fig:sub2}
+\end{subfigure}
+\caption{MIP Search for Conference Management} 
+\label{fig:test}
+\end{figure}
 
+\begin{figure}[ht]
+\centering
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[scale=.8]{g3.png}
+  \caption{MIP gap}
+  \label{fig:sub1}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[scale=.7]{g4.png}
+  \caption{MIP Objective}
+  \label{fig:sub2}
+\end{subfigure}
+\caption{MIP Search for Expedia dataset } 
+\label{fig:test}
+\end{figure}
 
-Clearly, optimized cost is different in LP Model and Integer Linear Programming model. It is due to output value of decision variables in (I)LP are integer number and decision variables in LP model  are real number. It is clear  From Table~\ref{tab:ilpmodel} that value of decision variable for Hotel Index 3 and 10 is different in LP and (I)LP model. Final optimal cost for conference management has a difference of 0.0506\% between LP and (I)LP model.
-\\
-\\
-For given problem of conference management, optimal cost of accommodating 150 guests in hotel is \euro 16207 and achieving average customer satisfaction rating of 8.3.
-Compare non integer and integer solutions
+Scalability of this program has been tested on hotel property data, for that appropriate data cleansing and scaling is done  to generate data in required format. This dataset has 84 variables and each hotel is rated on the scale of 0 to 5 (0 is very poor,1 is poor, 2 is acceptable, 3 is good, 4 is very good and  5 is excellent). In this case, room will be allocated when average customer satisfaction rating is at least 3.3.\\
 
-Why interger programming is required
+In fig 2(a) and fig 3(a) shows the evolution in time of the MIP gap during the global search and fig2(b) \& fig3(b) shows the progress of the current best integer solution objective relative to the best bound. For expedia data, integer solutions is found at three points. If we compare time for searching optimal solutions then Conference management found optimal solutions within 0.02 seconds and for expedia dataset best optimal solution is found within 0.13 seconds. Hence, Integer Linear programming take more time to solve if number of variables in the dataset increases gradually.\\
 
-Also take previous assignment example to contrast the need on MILP
+\textbf{Data Source:} Expedia Affiliate Network - Property Data \textit{URL: \url{http://developer.ean.com/database/property-data}} \\
+\begin{verbatim}
+!Expedia Hotel Property dataset
+PRICE:[ 84,84,195,68,99,86,151,351,72,94,637,400,59,159,66,73,67,49,101,115,62,180,253,272,143,
+86,55,61,67,135,40,171,140,122,140,435,75,118,35,70,204,180,108,237,184,140,107,100,262,109,327,
+289,176,512,97,74,212,172,593,773,103,58,76,476,84,58,242,80,275,2425,57,75,87,87,55,29,359,143,
+159,2603,80,128,101,229]	 	
+
+RATING: [3,0,0,2.5,3,2.5,3,4,2.5,3,3.5,4,3,3.5,3,0,3,3.5,3,3,2.5,4,4.5,4,3.5,2.5,2,3,0,3,3,3,2.5,
+3,3.5,4,0,3,2.5,2.5,3,0,0,0,2.5,3,2.5,3,4.5,2.5,2.5,3.5,3.5,3,0,3.5,3,0,0,3.5,3,3.5,0,3,2,3,4,
+3.5,3.5,4,2.5,3,3,0,3.5,2,0,3,0,2.5,1,0,4,3.5]
+
+AVAIL:[16,6,16,1,5,6,1,14,1,1,7,17,22,14,16,16,17,1,1,1,16,33,14,17,16,6,1,6,6,5,33,14,1,1,16,14,
+16,1,1,2,1,14,5,16,1,1,1,1,16,1,22,1,14,5,5,16,14,6,16,14,16,1,1,1,1,6,1,11,1,17,32,1,1,16,6,12,4
+,6,16,6,5,16,5,22] 
+\end{verbatim}
 %----------------------------------------------------------------------------------------
 %	CONCLUSIONS
 %----------------------------------------------------------------------------------------

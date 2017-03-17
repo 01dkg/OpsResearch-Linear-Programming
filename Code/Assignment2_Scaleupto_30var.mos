@@ -1,16 +1,16 @@
 model Conference_Management
 uses "mmxprs"; !gain access to the Xpress-Optimizer solver
 	declarations
-		HI = 1..30                       	! Index range
+		HI = 1..84                       	! Index range
 		PRICE: array(HI) of integer         ! Price table
 		RATING: array(HI) of real			!Customer Satsifcation rating
 		AVAIL: array(HI) of integer			!Available Rooms in a hotel
 		decVar: array(HI) of mpvar          !Decision Variables
 	end-declarations
-	Max_Guest := 150
+	Max_Guest := 200
 	
 	!Read in the data from our text file
-	initializations from 'Conference_Management2.txt'
+	initializations from 'Expedia.txt'
 		PRICE
 		RATING
 		AVAIL
@@ -41,7 +41,7 @@ uses "mmxprs"; !gain access to the Xpress-Optimizer solver
 		decVar(i) is_integer
 	end-do
 	
-	AvgRating:= (sum(i in HI) RATING(i)*decVar(i))/150 >= 8.3
+	AvgRating:= (sum(i in HI) RATING(i)*decVar(i))/150 >= 3.3
 			 
 	forall( i in HI)
 		decVar(i) <= AVAIL(i)	 	
